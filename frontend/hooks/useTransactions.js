@@ -10,7 +10,7 @@ export const useTransactions = (userId) => {
         {
             balance: 0,
             income: 0,
-            expenses: 0,
+            expense: 0,
         },
     );
     const [loading, setLoading] = useState(true);
