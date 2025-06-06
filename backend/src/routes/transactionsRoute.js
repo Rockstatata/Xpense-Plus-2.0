@@ -78,7 +78,7 @@ router.delete("/:userID/:id", async (req, res) => {
             return res.status(400).json({ error: 'Transaction ID must be a number' });
         }
         const result = await sql`DELETE FROM transactions WHERE user_id = ${userID} AND id = ${id}`;
-        if (result.length === 0) {
+        if (result.count === 0) {
             return res.status(404).json({ error: 'Transaction not found' });
         }
         res.status(204).send();
